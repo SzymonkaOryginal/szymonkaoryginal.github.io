@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dla Mojej Jedynej ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Dla Wiktorii</h1>
+        <p>Jesteś najpiękniejszą częścią mojego świata ✨</p>
+    </section>
+
+    <section class="counter-section">
+        <h3>Jesteśmy razem już:</h3>
+        <div id="timer">Ładowanie wspomnień...</div>
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-item">
+          <div class="timeline-date">22 Luty 2026</div>
+          <div class="timeline-content">
+              <h4>Pierwsze spotkanie ✨</h4>
+              <p>Dzień, w którym się poznaliśmy :3 Jeszcze wtedy nie wiedzieliśmy jak sie potoczy znajomość <3</p>
+          </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-date">8 Marzec 2026</div>
+          <div class="timeline-content">
+              <h4>Pierwszy Buziaczek 💋</h4>
+              <p>To uczucie było MAGICZNE! W tamtym momencie uświadomiliśmy sobie, że coś do siebie czujemy :3</p>
+          </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-date">11 Marca 2026</div>
+          <div class="timeline-content">
+              <h4>Zostaliśmy Parą! 🌸</h4>
+              <p>To już naprawdę! Zostaliśmy najprawdziwszą parą i złączyła nas Miłość 💖</p>
+          </div>
+      </div>
+  </section>
+
+    <section class="gallery">
+    	<img src="zdjecia/zdjecie1.jpg" alt="Nasze wspólne wspomnienie">
+    	<img src="zdjecia/zdjecie2.jpg" alt="Twoje piękne zdjęcie">
+	<img src="zdjecia/zdjecie3.jpg" alt="Twoje piękne zdjęcie">
+    
+    	<div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+        	<a href="galeria.html" class="view-more-btn">Zobacz wszystkie zdjęcia ✨</a>
+    	</div>
+    </section>
+
+      		<audio id="bg-music" loop style="display:none;">
+    		<source src="piosenka.mp3" type="audio/mpeg">
+		</audio>
+
+		<script>
+    		// Funkcja uruchamiająca muzykę
+    		function startMusic() {
+        		const music = document.getElementById('bg-music');
+        		music.play().then(() => {
+            		// Jeśli uda się odtworzyć, usuwamy nasłuchiwanie, żeby nie restartować piosenki
+            		document.removeEventListener('click', startMusic);
+            		document.removeEventListener('touchstart', startMusic);
+            		document.removeEventListener('scroll', startMusic);
+        		}).catch(error => {
+            		console.log("Autoodtwarzanie zablokowane, czekam na ruch...");
+        		});
+    		}
+
+    		// Czekamy na jakikolwiek ruch Wiktorii na stronie
+    		document.addEventListener('click', startMusic);
+    		document.addEventListener('touchstart', startMusic);
+    		document.addEventListener('scroll', startMusic);
+	</script>
+    <footer>
+        <p>Na zawsze Twój, Szymon ❤️</p>
+    </footer>
+
+    <script>
+        const startDate = new Date("2026-03-11T00:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML =
+                days + " dni, " + hours + "h " + minutes + "m " + seconds + "s";
+        }, 1000);
+    </script>
+
+    <section class="stats">
+      <div class="stat-item">
+          <h3>100h+</h3>
+          <p>Spędzonego Czasu Razem 💕</p>
+      </div>
+      <div class="stat-item">
+          <h3>10000+</h3>
+          <p>Wysłanych wiadomości 📱</p>
+      </div>
+      <div class="stat-item">
+          <h3>∞</h3>
+          <p>Powodów do uśmiechu ❤️</p>
+      </div>
+  </section>
+
+	<section class="reasons">
+    		<h2>Kilka powodów, dla których jesteś wyjątkowa:</h2>
+    		<ul>
+        		<li>✨ Twój uśmiech, który rozjaśnia każdy mój dzień.</li>
+        		<li>☕ Kochasz mnie takiego jakim jestem :3.</li>
+        		<li>🌟 Twoje śliczne Oczka <3.</li>
+        		<li>❤️ To, że zawsze potrafisz mnie wysłuchać.</li>
+    		</ul>
+</section>
+
+  <section class="letter">
+    <div class="letter-paper">
+        <h2>Dla mojej Wiktorii...</h2>
+        <p>Wikuuuś, dzięki tobie odkryłem czym naprawdę jest pierwsza miłość, czyli NAJLEPSZAA MIŁOŚĆ NA ZIEMII! Naprawdę doceniam każdą chwilę spędzoną z tobą, ponieważ każda ona jest piękna! Kocham twoje śliczne zielone oczka, twoją cudną twarz, ale i także twój cudowny charakter oraz troskę jaką mi dajesz. Kochaaaammm Cieeee Słoneczkooooo <333</p>
+        <p class="signature">Szymon</p>
+    </div>
+  </section>
+    <script>
+	function createHeart() {
+    		const heart = document.createElement('div');
+    		heart.classList.add('heart');
+    		heart.innerHTML = '❤️';
+    		heart.style.left = Math.random() * 100 + "vw";
+    		heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+    		document.body.appendChild(heart);
+
+    		setTimeout(() => {
+        		heart.remove();
+    			}, 5000);
+		}
+
+	setInterval(createHeart, 300);
+	</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+:root {
+    --primary-color: #ffafbd;
+    --secondary-color: #ffc3a0;
+    --text-color: #4a4a4a;
+    --bg-color: #fffafb;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Sekcja powitalna z płynnym gradientem */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Skaluje się na telefonach */
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Licznik czasu */
+.counter-section {
+    background: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.counter-section h3 {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #888;
+}
+
+#timer {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-weight: 400;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Galeria zdjęć */
+.gallery {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery img:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 175, 189, 0.4);
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.heart {
+    position: fixed;
+    top: -1vh;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    z-index: 999;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+    }
+}
+
+.reasons {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.reasons ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.reasons li {
+    padding: 15px;
+    margin: 10px 0;
+    background: var(--bg-color);
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+}
+
+/* Sekcja muzyki */
+.music-section {
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    align-items: center;
+    padding: 40px 20px;
+    background-color: var(--white);
+}
+
+.music-box {
+    text-align: center;
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 175, 189, 0.2);
+    border: 1px solid var(--primary-color);
+    max-width: 400px;
+    width: 100%;
+}
+
+.music-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Stylowanie samego paska audio */
+audio {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+}
+
+/* Dla przeglądarek Chrome/Edge/Safari - lekka zmiana koloru paska */
+audio::-webkit-media-controls-enclosure {
+    background-color: var(--bg-color);
+}
+
+.timeline { padding: 50px 20px; max-width: 800px; margin: 0 auto; position: relative; }
+.timeline::before { content: ''; position: absolute; left: 50%; width: 2px; height: 100%; background: var(--primary-color); }
+.timeline-item { margin-bottom: 40px; width: 50%; position: relative; }
+.timeline-item:nth-child(even) { margin-left: auto; padding-left: 30px; }
+.timeline-item:nth-child(odd) { text-align: right; padding-right: 30px; }
+.timeline-date { font-weight: bold; color: var(--primary-color); }
+.timeline-content { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+.letter { padding: 80px 20px; background: #fdf5f7; display: flex; justify-content: center; }
+.letter-paper {
+    background: white;
+    padding: 50px;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif; /* Elegancka czcionka */
+    line-height: 1.8;
+    position: relative;
+}
+.letter-paper::before {
+    content: '❤️';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+.signature { text-align: right; margin-top: 30px; font-style: italic; font-weight: bold; }
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: white;
+    text-align: center;
+}
+.stat-item h3 { font-size: 2.5rem; margin-bottom: 5px; font-family: 'Playfair Display', serif; }
+.stat-item p { font-size: 1rem; opacity: 0.9; }
+
+/* Styl dla przycisku "Zobacz więcej" na stronie głównej */
+.view-more-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 175, 189, 0.4);
+}
+
+.view-more-btn:hover {
+    transform: scale(1.05);
+    background: var(--secondary-color);
+}
+
+/* Styl dla mini-hero na podstronie galeria */
+.hero-mini {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Pełna galeria na podstronie */
+.gallery-full {
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-full img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-full img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-full video {
+    width: 100%;
+    height: 300px; /* Taka sama wysokość jak zdjęć */
+    object-fit: cover; /* To sprawi, że film wypełni kafelkę bez czarnych pasów */
+    border-radius: 10px;
+    background-color: #000; /* Tło pod filmem */
+}
+
+/* Opcjonalnie: efekt po najechaniu */
+.gallery-full video:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+}

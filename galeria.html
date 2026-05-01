@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasza Wspólna Galeria ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-page">
+
+    <section class="hero-mini">
+        <h1>Nasze Wspomnienia</h1>
+        <a href="index.html" class="back-btn">← Wróć do strony głównej</a>
+    </section>
+
+    <section class="gallery-full">
+        <!-- Tutaj dodawaj tyle zdjęć, ile chcesz! -->
+        <img src="zdjecia/zdjecie1.jpg" alt="Wspomnienie 1">
+        <img src="zdjecia/zdjecie2.jpg" alt="Wspomnienie 2">
+        <img src="zdjecia/zdjecie3.jpg" alt="Wspomnienie 3">
+        <img src="zdjecia/zdjecie4.jpg" alt="Wspomnienie 4">
+        <img src="zdjecia/zdjecie5.jpg" alt="Wspomnienie 5">
+        <img src="zdjecia/zdjecie6.jpg" alt="Wspomnienie 6">
+        <!-- Nowe zdjęcia -->
+        <img src="zdjecia/zdjecie7.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie8.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie9.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie10.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie11.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie12.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie13.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie14.jpg" alt="Wspomnienie 7">
+	<img src="zdjecia/zdjecie15.jpg" alt="Wspomnienie 7">
+	<!-- Filmik pierwszy -->
+<video controls class="gallery-video">
+    <source src="zdjecia/filmik1.mov" type="video/mp4">
+    Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+</video>
+
+<!-- Filmik drugi -->
+<video controls class="gallery-video">
+    <source src="zdjecia/filmik2.mov" type="video/mp4">
+    Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+</video>
+    </section>
+
+    <footer>
+        <p>Nasza historia wciąż trwa... ❤️</p>
+    </footer>
+
+    <!-- Skrypt na serduszka (ten sam co na głównej) -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
